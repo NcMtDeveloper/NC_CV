@@ -1,0 +1,42 @@
+<div class="cv-bio-page">
+    <div #bioTop class="bio-top">
+        <div (click)="reloadComponent()" #bioTopTranslate class="bio-top-right col-6">
+            <span>
+                <i class="fa-solid fa-language"></i>
+                <a class="flip-animate flip-link">
+                    <span class="change-lang" [ngClass]="IsLight == true ? 'light lightColor' : 'dark darkColor'"
+                        [attr.data-hover]="textChangeLanguage" [innerHTML]="textChangeLanguage">Tell me
+                        something</span>
+                </a>
+            </span>
+        </div>
+        <div class="bio-top-left">
+            <span class="profile-image" #profile>
+            </span>
+            <div class="bio-top-left-part-2">
+                <p class="bio-author" [innerHTML]="BioTitle[0].author"></p>
+                <p class="bio-author" [innerHTML]="BioTitle[1].Location"></p>
+                <p class="bio-author" [innerHTML]="BioTitle[2].modified"></p>
+            </div>
+            <div class="bio-top-left-part-1">
+                <p class="bio-author" [innerHTML]="BioTitle[0].authorVal"></p>
+                <p class="bio-author" [innerHTML]="BioTitle[1].LocationVal"></p>
+                <p class="bio-author" [innerHTML]="BioTitle[2].modifiedVal"></p>
+            </div>
+        </div>
+    </div>
+
+    <div #bioMain class="cv-bio-main">
+        <div *ngFor="let member of BioText" class="bio-text-main main-part-{{member.part}}">
+            <p class="cv-bio-text cv-part-{{member.part}}" [innerHTML]="member.text"></p>
+            <ng-container *ngIf="member.img.length !== 0">
+                <div class="cv-image-main cv-image-main-part-{{member.part}}"
+                    [ngClass]="IsLight == true ? 'light lightHover' : 'dark darkHover'">
+                    <div *ngFor="let pic of member.img" style="background-image:url({{pic}});" alt=""
+                        class="cv-image image-{{member.part}}"></div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

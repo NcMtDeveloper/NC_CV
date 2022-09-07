@@ -1,0 +1,38 @@
+@import 'src/style/variables.scss';
+
+.bottom-main {
+    display: flex;
+}
+
+.bottom-mother {
+    background: $primaryRedColor;
+    overflow: hidden;
+}
+
+.bottom-item {
+    flex: 0 0 auto;
+    padding: 10px;
+    text-align: center;
+    margin: 0 50px;
+    width: auto;
+    font-family: 'Regular';
+    line-height: 5px;
+}
+
+@keyframes tickerh {
+    0% {
+        transform: translate3d(100%, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-350%, 0, 0);
+    }
+}
+
+.bottom-main {
+    animation: tickerh linear 20s infinite;
+}
+
+.bottom-main:hover {
+    animation-play-state: paused;
+}

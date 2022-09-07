@@ -1,0 +1,47 @@
+<div class="footer-main">
+    <svg  [ngClass]="IsLight == true ? 'light lightSvg' : 'dark darkSvg'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#000000" fill-opacity="1"
+            d="M0,160L20,176C40,192,80,224,120,245.3C160,267,200,277,240,266.7C280,256,320,224,360,213.3C400,203,440,213,480,186.7C520,160,560,96,600,101.3C640,107,680,181,720,208C760,235,800,213,840,181.3C880,149,920,107,960,85.3C1000,64,1040,64,1080,74.7C1120,85,1160,107,1200,112C1240,117,1280,107,1320,128C1360,149,1400,203,1420,229.3L1440,256L1440,0L1420,0C1400,0,1360,0,1320,0C1280,0,1240,0,1200,0C1160,0,1120,0,1080,0C1040,0,1000,0,960,0C920,0,880,0,840,0C800,0,760,0,720,0C680,0,640,0,600,0C560,0,520,0,480,0C440,0,400,0,360,0C320,0,280,0,240,0C200,0,160,0,120,0C80,0,40,0,20,0L0,0Z">
+        </path>
+    </svg>
+    <div class="footer-divs">
+        <div class="img-text">
+            <div class="image-footer-main">
+                <img class="footer-image" src="assets\img\semiHexagon.png" alt="">
+            </div>
+            <div class="footer-text">
+                <a class="footer" [routerLink]="homeAddress">
+                    <i class="fa-solid fa-house"></i>
+                    <p class="footer-text">Home</p>
+                </a>
+                <a class="footer" [routerLink]="skillAddress">
+                    <i class="fa-solid fa-glasses"></i>
+                    <p class="footer-text">Skills</p>
+                </a>
+                <a class="footer" [routerLink]="detailsAddress" [queryParams]="{ selected: 'work' }">
+                    <i class="skill-work-icon fa-solid fa-briefcase"></i>
+                    <p class="footer-text">Experiences</p>
+                </a>
+                <a class="footer" [routerLink]="detailsAddress" [queryParams]="{ selected: 'certificates' }">
+                    <i class="certificate-icon fa-solid fa-graduation-cap"></i>
+                    <p class="footer-text">certificates</p>
+                </a>
+                <a class="footer" [routerLink]="detailsAddress" [queryParams]="{ selected: 'additional' }">
+                    <i class="additional-icon fa-solid fa-folder"></i>
+                    <p class="footer-text">additional skills</p>
+                </a>
+                <a class="footer" [routerLink]="detailsAddress" [queryParams]="{ selected: 'friends' }">
+                    <i class="friend-icon fa-solid fa-handshake"></i>
+                    <p class="footer-text">My friends</p>
+                </a>
+            </div>
+        </div>
+        <div class="footer-intro"  [ngClass]="IsLight == true ? 'light lightWhiteColor' : 'dark darkWhiteColor'">
+            <p class="footer-intro-text">AmirHosein Mardani Ch.</p>
+            <p class="footer-intro-text">Full stack developer</p>
+            <p class="footer-intro-text">Tehran, Iran</p>
+            <p class="footer-intro-text"><span class="copyright">©</span>2022 ILECY personal website. All right
+                reserved.</p>
+        </div>
+    </div>
+</div>

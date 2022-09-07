@@ -1,0 +1,448 @@
+/**********************************************************************************************************/
+/**********************************************************************************************************/
+/**************************************** T  I  M  E  L  I  N  E ******************************************/
+/**********************************************************************************************************/
+/**********************************************************************************************************/
+
+
+$purplePrimary: #9251ac;
+$purpleSecondary: #f6a4ec;
+$blue: (
+    primary:#555ac0,
+    secondary: #87bbfe
+);
+
+$green: (
+    "primary":#24b47e,
+    "secondary": #aff1b6
+);
+
+$orange: (
+    "primary":#c16f2e,
+    "secondary": #e9b285
+);
+
+$red: (
+    "primary":#b63535,
+    "secondary": #f6a4a4
+);
+
+$cyan: (
+    "primary":#3f7ba2,
+    "secondary": #a4f6e0
+);
+
+$yellow: (
+    "primary":#c4ab20,
+    "secondary": #e2e766
+);
+
+$ColorList: (
+    1:$blue,
+    2:$green,
+    3:$orange,
+    4:$red,
+    5:$cyan,
+    6:$yellow
+);
+
+$countAnimate: 2;
+$countColor: 1;
+
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    position: relative;
+}
+
+.timeline-content-upper {
+    padding: 20px 20px 0 20px;
+}
+
+.timeline-event {
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    margin: 20px 0;
+    border-radius: 20px;
+    align-self: center;
+    width: 50vw;
+}
+
+.timeline-event:nth-child(2n+1) {
+    flex-direction: row-reverse;
+}
+
+.timeline-event:nth-child(2n+1) .timeline-event-date {
+    border-radius: 0 20px 20px 0;
+}
+
+.timeline-event:nth-child(2n+1) .timeline-event-content {
+    border-radius: 20px 0 0 20px;
+}
+
+.timeline-event:nth-child(2n+1) .timeline-event-icon:before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: $purpleSecondary;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    right: auto;
+    z-index: -1;
+    transform: translateX(-50%);
+    -webkit-animation: fillTop 2s forwards 2s ease-in-out;
+    animation: fillTop 2s forwards 2s ease-in-out;
+}
+
+/*line from right to left*/
+.timeline-event:nth-child(2n+1) .timeline-event-icon:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: $purpleSecondary;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    top: 50%;
+    left: auto;
+    transform: translateY(-50%);
+    -webkit-animation: fillLeft 2s forwards 2s ease-in-out;
+    animation: fillLeft 2s forwards 2s ease-in-out;
+}
+
+.timeline-event-title,
+.title-divider.divider-type1 {
+    font-family: 'Medium';
+    color: $purplePrimary;
+}
+
+.title-divider {
+    margin: 5px;
+}
+
+.timeline-event-content {
+    // padding: 20px;
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+    background: #fff;
+    width: calc(40vw - 84px);
+    border-radius: 0 20px 20px 0;
+}
+
+.cert-url-main {
+    display: flex;
+    border-radius: 0 0 0 20px;
+    padding: 15px 0px;
+    background: #ebebeb;
+    justify-content: center;
+    font-family: 'ExtraBold';
+    text-decoration: none;
+    align-items: center;
+
+    .url-text {
+        padding-right: 5px;
+    }
+}
+
+.cert-url-main:hover {
+    cursor: pointer;
+    filter: brightness(0.95);
+}
+
+.timeline-event-date {
+    color: $purpleSecondary;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: $purplePrimary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 0 20px;
+    border-radius: 20px 0 0 20px;
+}
+
+.content-type1.description-text-title,
+.cert-url-main.url-type1 {
+    color: $purplePrimary;
+}
+
+.description-text-value,
+.description-text-title {
+    filter: contrast(0.65);
+}
+
+.content-type1.description-text-value {
+    color: $purpleSecondary;
+}
+
+
+.timeline-event-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $purplePrimary;
+    padding: 20px;
+    align-self: center;
+    margin: 0 20px;
+    background: $purpleSecondary;
+    border-radius: 100%;
+    width: 40px;
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+    padding: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.timeline-event-icon i {
+    font-size: 32px;
+}
+
+/*line from top to bottom*/
+.timeline-event-icon:before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: $purpleSecondary;
+    position: absolute;
+    top: 0%;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-animation: fillTop 2s forwards 2s ease-in-out;
+    animation: fillTop 2s forwards 2s ease-in-out;
+}
+
+/*line from left to right*/
+.timeline-event-icon:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: $purpleSecondary;
+    position: absolute;
+    left: 0%;
+    z-index: -1;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-animation: fillLeftOdd 2s forwards 2s ease-in-out;
+    animation: fillLeftOdd 2s forwards 2s ease-in-out;
+}
+
+.timeline-event-description {
+    flex-basis: 60%;
+}
+
+.description-text-title {
+    margin: 0;
+}
+
+
+
+@each $i in $ColorList {
+
+    $currentColor: map-get($ColorList, $countColor);
+
+    .timeline-event-type#{$countAnimate}:after {
+        background: map-get($currentColor, "primary");
+    }
+
+    @if $countAnimate % 2==0 {
+
+        .cert-url-main.url-type#{$countAnimate} {
+            border-radius: 0 0 20px 0;
+        }
+    }
+
+    .cert-url-main.url-type#{$countAnimate},
+    .content-type#{$countAnimate}.description-text-title,
+    .title-divider.divider-type#{$countAnimate} {
+        color: map-get($currentColor, "primary");
+    }
+
+    .content-type#{$countAnimate}.description-text-value {
+        color: map-get($currentColor, "secondary");
+    }
+
+    .timeline-event-type#{$countAnimate} .timeline-event-date {
+        color: map-get($currentColor, "secondary");
+        background: map-get($currentColor, "primary");
+    }
+
+    .timeline-event-type#{$countAnimate}:nth-child(2n+1) .timeline-event-icon:before,
+    .timeline-event-type#{$countAnimate}:nth-child(2n+1) .timeline-event-icon:after {
+        background: map-get($currentColor, "secondary");
+    }
+
+    .timeline-event-type#{$countAnimate} .timeline-event-icon {
+        background: map-get($currentColor, "secondary");
+        color: map-get($currentColor, "primary");
+    }
+
+    .timeline-event-type#{$countAnimate} .timeline-event-icon:before,
+    .timeline-event-type#{$countAnimate} .timeline-event-icon:after {
+        background: map-get($currentColor, "secondary");
+    }
+
+    .timeline-event-type#{$countAnimate} .timeline-event-title {
+        color: map-get($currentColor, "primary");
+    }
+
+    $countAnimate : $countAnimate +1;
+    $countColor : $countColor +1;
+}
+
+.timeline-event:last-child .timeline-event-icon:before {
+    content: none;
+}
+
+@media (max-width: 786px) {
+    .timeline-event {
+        flex-direction: column;
+        align-self: center;
+    }
+
+    .timeline-event-content {
+        width: 100%;
+    }
+
+    .timeline-event-icon {
+        border-radius: 20px 20px 0 0;
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .timeline-event-icon:before,
+    .timeline-event-icon:after {
+        display: none;
+    }
+
+    .timeline-event-date {
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .timeline-event:nth-child(2n+1) {
+        flex-direction: column;
+        align-self: center;
+    }
+
+    .timeline-event:nth-child(2n+1) .timeline-event-date {
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .timeline-event:nth-child(2n+1) .timeline-event-icon {
+        border-radius: 20px 20px 0 0;
+        margin: 0;
+    }
+}
+
+@-webkit-keyframes fillLeft {
+    100% {
+        right: 100%;
+    }
+}
+
+@keyframes fillLeft {
+    100% {
+        right: 100%;
+    }
+}
+
+@-webkit-keyframes fillTop {
+    100% {
+        top: 100%;
+        height: 200%;
+    }
+}
+
+@keyframes fillTop {
+    100% {
+        top: 100%;
+        height: 200%;
+    }
+}
+
+@-webkit-keyframes fillLeftOdd {
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes fillLeftOdd {
+    100% {
+        left: 100%;
+    }
+}
+
+/*************************************************************************************************************************/
+/*************************************************************************************************************************/
+/* ************************************************ Experience Timeline ************************************************ */
+/*************************************************************************************************************************/
+/*************************************************************************************************************************/
+
+.exp-timeline-content {
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* exp-timeline */
+.exp-timeline {
+    border-left: 4px solid #fc0000;
+    background: linear-gradient(141deg, #43373797 0%, #3629299f 35%, #52494978 63%, #2e242478 100%);
+    color: #ffffffcc;
+    border-radius: 25px;
+    padding: 50px;
+    list-style: none;
+    max-width: 50%;
+}
+
+.exp-timeline .event {
+    border-bottom: 1px dashed #ffffff1a;
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.exp-timeline .event:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.exp-timeline .event:before,
+.exp-timeline .event:after {
+    position: absolute;
+    display: block;
+    top: 0;
+}
+
+.exp-timeline .event:after {
+    box-shadow: 0 0 0 4px #fc0000;
+    left: -57.85px;
+    background: #501f24;
+    border-radius: 50%;
+    height: 11px;
+    width: 11px;
+    content: "";
+    top: 5px;
+}
+
+.exp-timeline-title {
+    font-family: bold;
+}
+
+.expTimeline-text {
+    font-family: 'Medium';
+}
+
+.exp-timeline-date {
+    font-family: 'Light';
+    font-style: italic;
+}

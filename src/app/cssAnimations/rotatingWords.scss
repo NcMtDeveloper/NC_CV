@@ -1,0 +1,61 @@
+.wrapper {
+    box-sizing: content-box;
+    background-color: #ffffff;
+    height: 70px;
+    padding: 50px 30px;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
+}
+
+.words {
+    overflow: hidden;
+}
+
+.s {
+    display: block;
+    height: 100%;
+    padding-left: 10px;
+    animation: spin_words 10s infinite;
+    animation-delay: 1000ms;
+}
+
+@keyframes spin_words {
+    $count : 9;
+    // count of "profession" in main-cv.ts - 1
+    // why -1? beacuase the first one don`t need animation
+    $translocator : 1;
+    /*
+    compare these patterns:
+        6.25 - 12.5 - 18.75 - 25  - 31.25 - 37.5 - 43.75 -  50 - 56.25 ...
+        112  - 100  -  212  - 200 -  312  - 300  -  412  - 400 -  512  ...
+    you can see we cannot control both algorythms with a single "For"
+    also, the second pattern is not going up by each step; it`s like this:
+        (112-100) - (212-200) - (312-300) - (412-400) ...
+    So? we need an extra counter in order to control each couple in the first pattern`s loop
+    see:
+    */
+    @for $i from 1 through $count * 2 {
+        
+        $spliter : $i % 2;
+        $percent : (100% / ($count * 2)) * $i;
+
+        @if $spliter == 0 {
+            //then we come here when $ = 2
+            $translateFirst: ((-100% * ($translocator)));
+            #{$percent} {
+                transform: translateY($translateFirst);
+            }
+            $translocator : $translocator + 1;
+            //every two loop, $translocator increases
+            //so, we are controlling the counter of the second pattern!
+        }
+        @else {
+            //first time, here compiles:
+            $translateSecond: ((-100% * $translocator) - 12);  
+            #{$percent} {
+                transform: translateY($translateSecond);
+            }       
+        }
+    }
+}

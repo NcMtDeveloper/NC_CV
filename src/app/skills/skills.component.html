@@ -1,0 +1,165 @@
+<div class="skill-top">
+    <div class="escape-div"><span class="inner-escape">Amir</span>`s</div>
+    <div class="escape-div">
+        <span class="escape-span">skills and experiences</span>
+    </div>
+</div>
+<div class="skill-main d-flex">
+    <div class="skill-card frontend-card">
+        <div class="card-flip">
+            <div class="img-flip"> <span></span><span></span><span></span><span></span></div>
+            <div class="content-flip">
+                <h2 class="skill-ability-head">Front-End</h2>
+                <div class="skill-ability" *ngFor="let member of frontEndAbilities">
+                    <div class="skill-ability-title d-flex">
+                        <div class="skill-ability-name">{{member.name}}</div>
+                        <div class="skill-ability-status">(status:{{member.status}})</div>
+                    </div>
+                    <div class="progress" style="height: 3px;">
+                        <div class="progress-bar progress-bar-striped" role="progressbar"
+                            [ngStyle]="{'width': member.percent}" aria-valuenow="50" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="skill-card backend-card">
+        <div class="card-flip">
+            <div class="img-flip"> <span></span><span></span><span></span><span></span></div>
+            <div class="content-flip">
+                <h2 class="skill-ability-head">Back-End</h2>
+                <div class="skill-ability" *ngFor="let member of backEndAbilities">
+                    <div class="skill-ability-title d-flex">
+                        <div class="skill-ability-name">{{member.name}}</div>
+                        <div class="skill-ability-status">(status:{{member.status}})</div>
+                    </div>
+                    <div class="progress" style="height: 3px;">
+                        <div class="progress-bar progress-bar-striped" role="progressbar"
+                            [ngStyle]="{'width': member.percent}" aria-valuenow="50" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="skill-card db-card">
+        <div class="card-flip">
+            <div class="img-flip"> <span></span><span></span><span></span><span></span></div>
+            <div class="content-flip">
+                <h2 class="skill-ability-head">SQL server</h2>
+                <div class="skill-ability" *ngFor="let member of SQLAbilities">
+                    <div class="skill-ability-title d-flex">
+                        <div class="skill-ability-name">{{member.name}}</div>
+                        <div class="skill-ability-status">(status:{{member.status}})</div>
+                    </div>
+                    <div class="progress" style="height: 3px;">
+                        <div class="progress-bar progress-bar-striped" role="progressbar"
+                            [ngStyle]="{'width': member.percent}" aria-valuenow="50" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="skill-bottom d-flex">
+    <div class="skill-work d-flex" [routerLink]="detailsAddress" [queryParams]="{ selected: 'work' }">
+        <i class="skill-work-icon fa-solid fa-briefcase"></i>
+        <div class="card-flip-words">
+            <div class="card__content">
+                <div class="card__content--description">
+                    <h3 class="roll-up">
+                        <span><span>E</span><span>E</span></span>
+                        <span><span>x</span><span>x</span></span>
+                        <span><span>p</span><span>p</span></span>
+                        <span><span>e</span><span>e</span></span>
+                        <span><span>r</span><span>r</span></span>
+                        <span><span>i</span><span>i</span></span>
+                        <span><span>e</span><span>e</span></span>
+                        <span><span>n</span><span>n</span></span>
+                        <span><span>c</span><span>c</span></span>
+                        <span><span>e</span><span>e</span></span>
+                        <span><span>s</span><span>s</span></span>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="skill-certificate d-flex" [routerLink]="detailsAddress" [queryParams]="{ selected: 'certificates' }">
+        <i class="certificate-icon fa-solid fa-graduation-cap"></i>
+        <div class="certificate-text">
+            <div class="card-flip-words">
+                <div class="card__content">
+                    <div class="card__content--description">
+                        <h3 class="roll-up">
+                            <span><span>C</span><span>C</span></span>
+                            <span><span>e</span><span>e</span></span>
+                            <span><span>r</span><span>r</span></span>
+                            <span><span>t</span><span>t</span></span>
+                            <span><span>i</span><span>i</span></span>
+                            <span><span>f</span><span>f</span></span>
+                            <span><span>i</span><span>i</span></span>
+                            <span><span>c</span><span>c</span></span>
+                            <span><span>a</span><span>a</span></span>
+                            <span><span>t</span><span>t</span></span>
+                            <span><span>e</span><span>e</span></span>
+                            <span><span>s</span><span>s</span></span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="skill-additional d-flex" [routerLink]="detailsAddress" [queryParams]="{ selected: 'additional' }">
+        <i class="additional-icon fa-solid fa-folder"></i>
+        <div class="additional-text">
+            <div class="card-flip-words">
+                <div class="card__content">
+                    <div class="card__content--description">
+                        <h3 class="roll-up">
+                            <span><span>A</span><span>A</span></span>
+                            <span><span>d</span><span>d</span></span>
+                            <span><span>d</span><span>d</span></span>
+                            <span><span>i</span><span>i</span></span>
+                            <span><span>t</span><span>t</span></span>
+                            <span><span>i</span><span>i</span></span>
+                            <span><span>o</span><span>o</span></span>
+                            <span><span>n</span><span>n</span></span>
+                            <span><span>a</span><span>a</span></span>
+                            <span><span>l</span><span>l</span></span>
+                            <span><span>S</span><span>S</span></span>
+                            <span><span>k</span><span>k</span></span>
+                            <span><span>i</span><span>i</span></span>
+                            <span><span>l</span><span>l</span></span>
+                            <span><span>l</span><span>l</span></span>
+                            <span><span>s</span><span>s</span></span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="skill-friends d-flex" [routerLink]="detailsAddress" [queryParams]="{ selected: 'friends' }">
+        <i class="friend-icon fa-solid fa-handshake"></i>
+        <div class="friend-text">
+            <div class="card-flip-words">
+                <div class="card__content">
+                    <div class="card__content--description">
+                        <h3 class="roll-up">
+                            <span><span>M</span><span>M</span></span>
+                            <span><span>y</span><span>y</span></span>
+                            <span><span>F</span><span>F</span></span>
+                            <span><span>r</span><span>r</span></span>
+                            <span><span>i</span><span>i</span></span>
+                            <span><span>e</span><span>e</span></span>
+                            <span><span>n</span><span>n</span></span>
+                            <span><span>d</span><span>d</span></span>
+                            <span><span>s</span><span>s</span></span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

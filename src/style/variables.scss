@@ -1,0 +1,27 @@
+$primaryRedColor:#c40700;
+
+.darkSvg > path{
+    fill: #000;
+}
+.darkColor{
+    color: #fff;
+}
+.darkBackGround{
+    background-color: #000;
+}
+
+.lightHover > *:hover{
+    filter: invert(0) brightness(1) !important;
+}
+.lightSvg > path{
+    fill: #fff;
+}
+.lightWhiteColor{
+    color: #fff;
+}
+.lightColor{
+    color: #000;
+}
+.lightBackground{
+    background-color: #fff;
+}

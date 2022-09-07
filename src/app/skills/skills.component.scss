@@ -1,0 +1,135 @@
+@import 'src/style/variables.scss';
+
+.skill-top {
+    display: flex;
+    justify-content: center;
+    font-family: bold;
+    font-size: 30px;
+}
+
+.escape-span {
+    padding-left: 8px;
+}
+
+.inner-escape {
+    color: $primaryRedColor;
+}
+
+.skill-main {
+    margin-top: 30px;
+    justify-content: space-evenly;
+}
+
+.frontend-card .card-flip .img-flip span {
+    background: url("../../assets/img/angular.png");
+}
+.backend-card .card-flip .img-flip span {
+    background: url("../../assets/img/api.png");
+}
+.db-card .card-flip .img-flip span {
+    background: url("../../assets/img/database.png");
+}
+.skill-ability{
+    margin-bottom: 15px;
+}
+.skill-ability-head{
+    margin: 20px 0;
+}
+.skill-ability-title {
+    justify-content: space-between;
+    font-family: 'Light';
+    font-size: 12px;
+}
+.progress-bar{
+    background-color: $primaryRedColor;
+}
+.skill-ability-status{
+    color: $primaryRedColor;
+    font-family: bold;
+}
+
+/*******
+********
+****work
+********
+*******/
+.skill-work,
+.skill-certificate,
+.skill-additional,
+.skill-friends {
+    align-items: center;
+}
+.skill-work-icon,
+.certificate-icon,
+.additional-icon,
+.friend-icon {
+    font-size: 20px;
+    padding-right: 10px;
+}
+.skill-work:hover{
+    cursor: pointer;
+    .skill-work-icon {
+        color: $primaryRedColor;
+    } 
+}
+.skill-certificate:hover{
+    cursor: pointer;
+    .certificate-icon {
+        color: $primaryRedColor;
+    } 
+}
+.skill-additional:hover{
+    cursor: pointer;
+    .additional-icon {
+        color: $primaryRedColor;
+    } 
+}
+.skill-friends:hover{
+    cursor: pointer;
+    .friend-icon {
+        color: $primaryRedColor;
+    } 
+}
+
+.skill-bottom {
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*************************************Media Queries*******************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+
+@media only screen and (max-width: 480px) {
+    .skill-top>* {
+        font-size: large;
+    }
+    .skill-top {
+        margin-top: 20px;
+    }
+    .skill-main {
+        display: flex;
+        flex-direction: column;
+    }
+    .img-flip {
+        display: none !important;
+    }
+    .content-flip {
+        padding: 0 15px;
+        transform: translateY(0) !important;
+    }
+    .card-flip {
+        width: 100% !important;
+    }
+    .skill-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0px 10px 10em 10px;
+    }
+    .skill-bottom>* {
+        margin: 10px 0px !important;
+    }
+}

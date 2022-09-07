@@ -1,0 +1,104 @@
+<div class="intro-main d-flex">
+    <div class="intro-upper d-flex">
+        <div class="intro-left col-12 col-md-8">
+            <div class="left-upper">
+                <div class="intro-hi">
+                    <p class="intro-text reveal-text">Hi,</p>
+                </div>
+                <div class="intro-whoami">
+                    <p class="intro-text reveal-text">I`m <span class="intro-Amir">Amir</span></p>
+                </div>
+                <div class="intro-proffession reveal-text">
+                    <div class="intro-iam" #introIam>
+                        <p class="intro-text">a</p>
+                    </div>
+                    <div class="intro-pro-mother">
+                        <div class="intro-pro-main" #introProMain>
+                            <div class="words" #words>
+                                <span *ngFor="let member of profession" class="s intro-pro">{{member}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="intro-aboutme-main d-flex col-12 col-md-3" [routerLink]="skillsAddress">
+                    <p class="intro-aboutme-text">My skills</p>
+                    <i class="intro-aboutme-arrow fa-solid fa-arrow-right-long"></i>
+                </a>
+            </div>
+            <div class="intro-bottom-left col-12 col-md-8">
+                <div class="intro-linkedin d-flex col-1">
+                    <!-- (mouseover)="hoverLink($event, 'linkedin')"
+                    (mouseout)="unhoverLink($event, 'linkedin')" -->
+                    <a #linkedin href="https://www.linkedin.com/in/ilecy/" target="_blank"
+                        class="linkedin-text mobile-hover animate-charcter">
+                        <i class="linkedin-icon fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <div class="intro-email d-flex col-1">
+                    <!-- (mouseover)="hoverLink($event, 'email')"
+                    (mouseout)="unhoverLink($event, 'email')" -->
+                    <a #email href=# class="linkedin-text mobile-hover animate-charcter mobile-hover">
+                        <i class="email-icon fa-solid fa-at"></i>
+                    </a>
+                </div>
+                <div class="intro-instagram d-flex col-1">
+                    <!-- (mouseover)="hoverLink($event, 'instagram')"
+                    (mouseout)="unhoverLink($event, 'instagram')" -->
+                    <a #instagram href="https://www.instagram.com/amir.hmch/" target="_blank"
+                        class="linkedin-text mobile-hover animate-charcter mobile-hover">
+                        <i class="insta-icon fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="intro-right col-12 col-md-4">
+            <div class="intro-right-upper">
+                <div class="intro-location d-flex">
+                    <i class="fa-solid fa-location-dot intro-location-icon"></i>
+                    <p class="intro-location-text">Iran, Tehran</p>
+                </div>
+                <div class="intro-bio">
+                    <p class="intro-bio-title">
+                        My biography</p>
+                    <p class="intro-bio-text">
+                        I remember my childhood; I spent my time in our local library. Not because I was an educated
+                        child! No! Maybe because I was an introvert, I chose books as my best friend; Or maybe I WAS
+                        educated! No, personally I don`t think so!
+                    </p>
+                    <div class="cv-continue">
+                        <a [routerLink]="biographyAddress" [queryParams]="{ language: 'Eng' }"
+                            class="intro-bio-continue animate-charcter AnimHG">Continue reading</a>
+                        <a [routerLink]="biographyAddress" [queryParams]="{ language: 'Per' }"
+                            class="intro-bio-continue animate-charcter AnimHG">Continue reading in persian</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="intro-bottom d-flex">
+        <ng-container *ngIf="isDesktop === true">
+            <a class="logo-main" [routerLink]="detailsAddress" [queryParams]="{ selected: 'work' }">
+                <ng-container *ngFor="let logo of skillLogo">
+                    <div class="logo">
+                        <img [src]="logo.address" alt="" class="logo-img" />
+                    </div>
+                </ng-container>
+            </a>
+        </ng-container>
+        <ng-container *ngIf="falsing() === '2'">
+            <div class="intro-bottom-right col-4">
+                <div class="intro-chat-main d-flex">
+                    <div class="intro-chat d-flex">
+                        <i class="intro-chat-icon fa-solid fa-message"></i>
+                        <div class="intro-chat-text">
+                            <a class="flip-animate flip-link">
+                                <span data-hover="Tell me something">Tell me something</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

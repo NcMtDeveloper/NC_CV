@@ -1,0 +1,136 @@
+@import 'src/style/variables.scss';
+
+/* base form of html
+
+<div class="card">
+<div class="card__content">
+    <div class="card__content--description">
+        <h3 class="roll-up">
+            <span><span>A</span><span>A</span></span>
+            <span><span>c</span><span>c</span></span>
+            <span><span>c</span><span>c</span></span>
+            <span><span>e</span><span>e</span></span>
+            <span><span>s</span><span>s</span></span>
+            <span><span>s</span><span>s</span></span>
+        </h3>
+    </div>
+</div>
+</div> */
+
+
+.roll-up {
+    overflow: hidden;
+    position: relative;
+}
+
+.roll-up>span {
+    display: inline-block;
+    position: relative;
+}
+
+.roll-up>span:nth-child(1) {
+    transition-delay: 0.02s;
+}
+
+.roll-up>span:nth-child(2) {
+    transition-delay: 0.04s;
+}
+
+.roll-up>span:nth-child(3) {
+    transition-delay: 0.06s;
+}
+
+.roll-up>span:nth-child(4) {
+    transition-delay: 0.08s;
+}
+
+.roll-up>span:nth-child(5) {
+    transition-delay: 0.10s;
+}
+
+.roll-up>span:nth-child(6) {
+    transition-delay: 0.12s;
+}
+
+.roll-up>span:nth-child(7) {
+    transition-delay: 0.14s;
+}
+
+.roll-up>span:nth-child(8) {
+    transition-delay: 0.16s;
+}
+
+.roll-up>span:nth-child(9) {
+    transition-delay: 0.18s;
+}
+
+.roll-up>span:nth-child(10) {
+    transition-delay: 0.20s;
+}
+
+.roll-up>span:nth-child(11) {
+    transition-delay: 0.22s;
+}
+
+.roll-up>span:nth-child(12) {
+    transition-delay: 0.24s;
+}
+
+.roll-up>span:nth-child(13) {
+    transition-delay: 0.26s;
+}
+.roll-up>span:nth-child(14) {
+    transition-delay: 0.28s;
+}
+.roll-up>span:nth-child(15) {
+    transition-delay: 0.30s;
+}
+.roll-up>span:nth-child(16) {
+    transition-delay: 0.32s;
+}
+.roll-up>span:nth-child(17) {
+    transition-delay: 0.34s;
+}
+.roll-up>span:nth-child(18) {
+    transition-delay: 0.36s;
+}
+.roll-up>span:nth-child(19) {
+    transition-delay: 0.38s;
+}
+.roll-up>span:nth-child(20) {
+    transition-delay: 0.40s;
+}
+.roll-up>span:nth-child(21) {
+    transition-delay: 0.42s;
+}
+.roll-up>span:nth-child(22) {
+    transition-delay: 0.44s;
+}
+.roll-up>span:nth-child(23) {
+    transition-delay: 0.46s;
+}
+
+.roll-up>span>span {
+    display: inline-block;
+    transition: 0.6s cubic-bezier(0.7, 0.01, 0.37, 1);
+    transition-delay: inherit;
+}
+
+.roll-up>span>span:nth-child(1) {
+    position: relative;
+}
+
+.roll-up>span>span:nth-child(2) {
+    position: absolute;
+    transform: translateY(100%);
+    left: 0;
+    color: $primaryRedColor;
+}
+
+.card-flip-words:hover .roll-up>span>span:nth-child(1) {
+    transform: translateY(-100%);
+}
+
+.card-flip-words:hover .roll-up>span>span:nth-child(2) {
+    transform: translateY(0);
+}

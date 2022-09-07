@@ -1,0 +1,27 @@
+.escape-div {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.escape-div:first-of-type {
+    animation: showup 3s;
+}
+
+
+.escape-div:last-of-type .escape-span {
+    animation: slidein 3s;
+}
+
+@keyframes showup {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    100% {opacity: 1;}
+}
+
+@keyframes slidein {
+    0% {margin-left: -800px;}
+    10% {margin-left: -750px;}
+    30% {margin-left: -700px;}
+    100% {margin-left: 0px;}
+}
+

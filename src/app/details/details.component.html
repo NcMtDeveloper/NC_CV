@@ -1,0 +1,144 @@
+<div class="main-body">
+    <div class="options">
+        <div (click)="optionActive($event)" class="break option work">
+            <div class="option-content ">
+                <div class="exp-timeline-content">
+                    <ul class="exp-timeline animate-animated animate-fadeIn">
+                      <ng-container *ngFor="let jobs of expTimeline">
+                          <li class="event event-{{jobs.index}} {{jobs.mainClass}} animate-fadeInDown animate-animated animate-delay-{{jobs.index * 500}}ms">
+                            <h3 class="exp-timeline-title {{jobs.titleClass}}">{{jobs.title}}</h3>
+                            <ng-container *ngFor="let member of jobs.text">
+                                <p class="expTimeline-text expTimeline-text-{{member.number}} {{member.Class}}">{{member.content}}</p>
+                            </ng-container>
+                            <p class="exp-timeline-date {{jobs.mainClass}}-date">● {{jobs.dataDate}}</p>
+                          </li>
+                      </ng-container>
+                    </ul>
+                  </div>
+            </div>
+            <div class="label">
+                <div class="icon">
+                    <i class="skill-work-icon fa-solid fa-briefcase"></i>
+                </div>
+                <div class="info">
+                    <div class="main">Experiences</div>
+                    <div class="sub">Jobs, cooperations and projects</div>
+                </div>
+            </div>
+        </div>
+        <div (click)="optionActive($event)" class="break option certificates">
+            <div class="option-content">
+                <div class="content-main">
+                    <div class="timeline">
+                        <ng-container *ngFor="let line of timeLine">
+                            <div class="timeline-event animate-fadeInDown animate-animated 
+                            animate-delay-{{line.index}}s timeline-event-type{{line.themeType}} {{line.mainClass}}">
+                                <div class="timeline-event-icon ">
+                                    <i class="{{line.iconClass}}"></i>
+                                </div>
+                                <div class="timeline-event-date">
+                                    {{line.date}}
+                                </div>
+                                <div class="timeline-event-content content-type{{line.themeType}}">
+                                    <div class="timeline-content-upper">
+                                        <div class="timeline-event-title  {{line.mainClass}}-title">
+                                            {{line.title}}
+                                        </div>
+                                        <hr class="title-divider divider-type{{line.themeType}}">
+                                        <div class="timeline-event-description {{line.mainClass}}-description">
+                                            <ng-container *ngFor="let member of line.description">
+                                                <p
+                                                    class="description-text-title content-type{{line.themeType}} description-{{member.number}}-title">
+                                                    ● {{member.title}}</p>
+                                                <p
+                                                    class="description-text-value content-type{{line.themeType}} description-{{member.number}}-value">
+                                                    {{member.value}}</p>
+                                            </ng-container>
+                                        </div>
+                                    </div>
+                                    <ng-container *ngIf="line.certUrl !== '' ">
+                                        <a href="{{line.certUrl}}" class="cert-url-main url-type{{line.themeType}}"
+                                            target="_blank">
+                                            <span class="url-text">Certification</span>
+                                            <i class="fa-solid fa-up-right-from-square"></i>
+                                        </a>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            <div class="label">
+                <div class="icon">
+                    <i class="certificate-icon fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="info">
+                    <div class="main">Learning timeline</div>
+                    <div class="sub">Everything about my courses, Certificates, self-taught, and etc.</div>
+                </div>
+            </div>
+        </div>
+        <div (click)="optionActive($event)" class="break option additional">
+            <div class="option-content fave-content">
+                <ng-container *ngFor="let card of AdditionalCard">
+                    <div class=" animate-fadeInDown animate-animated card mycard-main {{card.mainClassName}} image-{{card.number}}">
+                        <ng-container *ngIf="card.number % 2 === 0">
+                            <div class="card-img mycard-img  {{card.imgClassName}} mycard-img-{{card.number}}"
+                                [style.background-image]="'url('+ card.imgAddress +') '"></div>
+                        </ng-container>
+                        <div class="mycard-text">
+                            <div class="mycard-title-div">
+                                <i class="fa-solid fa-square-check"></i>
+                                <p class="card-title mycard-title {{card.titleClassName}}">{{card.TitleName}}</p>
+                            </div>
+                            <div class="mycard-text-div">
+                                <p class="card-text mycard-text {{card.cardTextClassName}}"
+                                    *ngFor="let member of card.cardtext">{{member.name}}  <span>{{member.status}}</span></p>
+                            </div>
+                            <div class="mycard-footer">
+                                <a href="" class="mycard-footer-img-link" *ngFor="let member of card.cardLogo">
+                                    <img class="mycard-footer-img" src="{{member}}">
+                                </a>
+                            </div>
+                        </div>
+                        <ng-container *ngIf="card.number % 2 !== 0">
+                            <div class="card-img mycard-img  {{card.imgClassName}} mycard-img-{{card.number}}"
+                                [style.background-image]="'url('+ card.imgAddress +') '"></div>
+                        </ng-container>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="label">
+                <div class="icon">
+                    <i class="additional-icon fa-solid fa-folder"></i>
+                </div>
+                <div class="info">
+                    <div class="main">Additional Skills</div>
+                    <div class="sub">Everything about me in other fields.</div>
+                </div>
+            </div>
+        </div>
+        <div (click)="optionActive($event)" class="break option friends">
+            <div class="option-content">
+                <div class="content-main animate-fadeInDown animate-animated">
+                    <div *ngFor="let member of logoAddress" class="logos">
+                        <a href="{{member.website}}" target="_blank" class="friend-link {{member.name}}-link"
+                            (click)="openUrl($event)">
+                            <img class="friend-icon {{member.name}}-img" src="{{member.address}}" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="label">
+                <div class="icon">
+                    <i class="option-friend-icon fa-solid fa-handshake"></i>
+                </div>
+                <div class="info">
+                    <div class="main">My freinds</div>
+                    <div class="sub">Applications, platforms, websites, groups, and ...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

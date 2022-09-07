@@ -1,0 +1,188 @@
+@import 'src/style/variables.scss';
+
+$cover-width: 200px;
+$cover-height: ($cover-width * (1745/2397));
+$hexagon-width-height: 300px;
+$circle-image: 150px;
+
+$profile:"/assets/img/profile.jpg";
+
+.cv-bio-main {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.cv-bio-persian {
+    font-family: 'IranSansRegular';
+    direction: rtl;
+}
+
+.cv-bio-english {
+    font-family: 'light';
+    direction: ltr;
+}
+
+.bio-top-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    cursor: pointer;
+    align-items: center;
+}
+
+.bio-top-right>*:hover {
+    color: $primaryRedColor;
+}
+
+.bio-top-right>span {
+    display: flex;
+}
+
+.fa-language {
+    font-size: 25px;
+    margin: 0 15px 0 15px;
+}
+
+.cv-bio-page {
+    margin: 15px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bio-top-left {
+    display: flex;
+}
+
+.bio-top-left-part-2>*,
+.bio-top-left-part-1>* {
+    margin: 0;
+}
+
+.bio-top-left-part-2,
+.bio-top-left-part-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0px 10px 10px 15px;
+    flex: 0 0 auto;
+    font-size: 13px;
+}
+
+.bio-top {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.profile-image {
+    background-image: url($profile);
+    background-size: cover;
+    width: 20px;
+    border-radius: 15px;
+    background-position-y: center;
+    height: 0px;
+}
+
+.profile-image-reflect {
+    transform: scaleX(-1);
+}
+
+.image-2 {
+    display: flex;
+    height: 200px;
+    justify-content: center;
+}
+
+.bio-text-main {
+    display: flex;
+}
+
+.main-part-2,
+.main-part-5 {
+    flex-direction: column;
+}
+
+.cv-image-main-part-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+
+.cv-image-main-part-1 {
+    height: 200px;
+}
+
+.image-1 {
+    width: -webkit-fill-available;
+}
+
+.image-2 {
+    height: $cover-width;
+    width: $cover-height;
+    background-size: cover;
+}
+
+.image-5 {
+    height: $hexagon-width-height;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: invert(1.7);
+}
+
+.main-part-5 {
+    flex-direction: column;
+}
+
+.cv-image-main-part-8 {
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    margin-top: 20px;
+    justify-content: space-around;
+}
+
+.main-part-8 {
+    flex-direction: column;
+}
+
+.cv-image-main-part-8>* {
+    height: $circle-image;
+    width: $circle-image;
+    filter: invert(1) brightness(0.5);
+    background-size: cover;
+}
+.cv-image-main-part-8>*:hover{
+    filter: invert(1) brightness(1);
+    cursor: pointer;
+}
+
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*************************************Media Queries*******************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+
+@media only screen and (max-width: 480px) {
+    .cv-bio-page {
+        width: calc(100% - 30px) !important;
+    }
+    .bio-top {
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    .bio-top-right {
+        display: flex;
+        flex: 0 0 auto;
+        width: 100% !important;
+        flex-direction: row-reverse !important;
+        justify-content: flex-end !important;
+    }
+    .cv-image.image-8 {
+        filter: invert(1) !important;
+    }
+}

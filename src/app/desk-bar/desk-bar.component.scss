@@ -1,0 +1,50 @@
+@import 'src/style/variables.scss';
+
+.desk-main {
+    font-family: medium;
+    padding: 10px;
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.desk-theme {
+    display: flex;
+    font-size: 25px;
+    margin-right: 15px;
+    align-items: center;
+}
+
+.desk-theme:hover {
+    color: $primaryRedColor;
+    cursor: pointer;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.left>p,
+svg {
+    margin: 0 20px;
+    align-self: center;
+}
+
+.desk-ilecy {
+    font-family: 'ExtraBold';
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.desk-email {
+    font-family: 'light';
+    font-size: 15px;
+    padding-left: 80px;
+}
+
+.desk-bars {
+    right: 0;
+    position: fixed;
+    font-size: 30px;
+}

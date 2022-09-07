@@ -1,0 +1,19 @@
+.cv-back {
+    position: fixed;
+    right: 10px;
+    bottom: 50px;
+    font-size: 30px;
+    background: #c41a00;
+    box-shadow: 0 0 15px 0px #c41a00;
+    border: 1px solid #c41a00;
+    border-radius: 50%;
+    padding: 10px;
+    color: #fff;
+}
+
+.cv-back:hover {
+    cursor: pointer;
+    color: #770804;
+    box-shadow: 0 0 15px 0px #770804;
+    border: 1px solid #770804;
+}

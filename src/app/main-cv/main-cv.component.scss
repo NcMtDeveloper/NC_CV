@@ -1,0 +1,298 @@
+// $mainBackground:"/assets/img/MainPage.gif";
+
+@import 'src/style/variables.scss';
+
+.intro-main {
+    flex-direction: column;
+    height: 80%;
+    justify-content: space-between;
+    // background-image: url($mainBackground);
+    background-position: center;
+    background-size: cover;
+}
+
+.intro-text {
+    font-family: light;
+    font-size: 60px;
+    margin-bottom: 0;
+    display: inline-block;
+}
+
+.intro-left,
+.intro-bottom-left {
+    padding-left: 30px;
+}
+
+.intro-Amir {
+    font-family: medium;
+    color: $primaryRedColor;
+    font-size: 70px;
+}
+
+.intro-iam>p {
+    font-size: 30px;
+}
+
+.intro-aboutme-arrow,
+.intro-aboutme-text {
+    align-self: center;
+    margin: 0 10px;
+}
+
+.intro-aboutme-main {
+    background: $primaryRedColor;
+    border-radius: 9px;
+    color: #fff;
+    justify-content: space-between;
+    margin: 25px 0 0 0;
+    text-decoration: none;
+}
+
+.intro-aboutme-main:hover {
+    background: #5e0f0b;
+
+    .intro-aboutme-arrow {
+        background: $primaryRedColor;
+    }
+}
+
+.intro-aboutme-text {
+    padding: 10px 0;
+}
+
+.intro-aboutme-arrow {
+    background: #e4736e;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.intro-pro-main {
+    display: grid;
+    font-size: 30px;
+}
+
+.intro-iam,
+.intro-pro-mother,
+.intro-proffession {
+    display: inline-block;
+}
+
+/*********
+**********
+*bio part
+**********
+*********/
+
+.intro-right {
+    padding-right: 30px;
+}
+
+.intro-location {
+    align-items: center;
+}
+
+.intro-location-icon {
+    margin-right: 6px;
+}
+
+.intro-location-text {
+    padding: 0 4px;
+    font-family: 'Bold';
+    font-size: 22px;
+    margin: 0;
+}
+
+.intro-bio-title {
+    font-family: 'ExtraBold';
+    font-size: 35px;
+}
+
+.intro-bio-text {
+    text-align: justify;
+    font-family: 'Light';
+    font-size: 20px;
+    padding-right: 15px;
+}
+
+.intro-bio-continue {
+    font-family: 'Bold' !important;
+    animation-duration: 1s;
+}
+.intro-bio-continue:hover{
+    font-style: italic;
+    background-color: $primaryRedColor !important;
+    background-image: none;
+}
+/*********
+**********
+*link part
+**********
+*********/
+.intro-bottom-left {
+    display: flex;
+    margin-top: 20px;
+    justify-content: flex-start;
+}
+
+.intro-bottom-left>* {
+    margin: 5px 0;
+    font-size: 20px;
+}
+
+.linkedin-icon,
+.email-icon,
+.insta-icon {
+    padding: 3px 0;
+}
+
+.linkedin-text {
+    color: #fff;
+    /* color: $primaryRedColor; */
+    font-size: 25px;
+    font-family: 'regular';
+    /* font-family: 'LightItalic'; */
+    padding-left: 10px;
+    text-decoration: none;
+}
+.logo-img {
+    background: #fff;
+    padding: 14px;
+    border-radius: 30%;
+    height: 10vh;
+    box-shadow: 0px 0px 20px 0px #00000073;
+}
+.logo-main {
+    animation: skillMove linear 30s infinite;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 1000vw;
+    height: 50%;
+    padding-left: 100vw;
+    padding-right: 100vw;
+    background: $primaryRedColor;
+}
+.logo-main > div {
+    width: 8vw;
+}
+@keyframes skillMove {
+    0% {
+        transform: translate3d(-90vw, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(-110vw, 0, 0);
+    }
+    100% {
+        transform: translate3d(-90vw, 0, 0);
+    }
+}
+@keyframes skillMoveMobile {
+    0% {
+        transform: translate3d(-90vw, 0, 0);
+    }
+    50% {
+        transform: translate3d(-270vw, 0, 0);
+    }
+    100% {
+        transform: translate3d(-90vw, 0, 0);
+    }
+}
+/*********
+**********
+*chat part
+**********
+*********/
+// .intro-bottom-right {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-end;
+// }
+
+// .intro-chat-text {
+//     cursor: pointer;
+//     font-family: regular;
+// }
+
+// .intro-chat-main {
+//     align-items: center;
+//     justify-content: flex-start;
+// }
+
+// .intro-chat {
+//     align-items: center;
+//     margin-right: 30px;
+//     // background: #c41a00;
+//     border-radius: 5px;
+//     padding: 3px 10px;
+// }
+
+// .intro-chat:hover {
+//     .intro-chat-icon {
+//         color: $primaryRedColor;
+//     }
+// }
+
+.intro-chat-text {
+    margin: 0;
+    padding-left: 5px;
+}
+
+.cv-continue {
+    display: flex;
+    flex-direction: column;
+}
+
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*************************************Media Queries*******************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+
+@media only screen and (max-width: 480px) {
+    .intro-main {
+        background-image: none;
+    }
+    .intro-bottom-left {
+        justify-content: center;
+    }
+    .logo-main {
+        animation: skillMoveMobile linear 30s infinite;
+    }
+    .intro-bottom-left> div{
+        width: 24% !important;
+    }
+    .intro-aboutme-main {
+        margin: 20px 0 0 0;
+    }
+    .logo-main > div {
+        width: 20vw;
+    }
+    .intro-upper.d-flex {
+        display: flex;
+        flex-direction: column;
+    }
+    .intro-left,
+    .intro-bottom-left {
+        padding: 0px 15px !important;
+        margin-bottom: 10px;
+    }
+    .intro-bio-text,
+    .intro-bio-title,
+    .intro-location,
+    .cv-continue {
+        padding-left: 15px;
+    }
+    .cv-continue {
+        margin-bottom: 15px;
+    }
+    .intro-right {
+        padding: 0 !important;
+        margin-bottom: 50px;
+    }
+    .mobile-hover{
+        animation: hovered 1s, textclip 2s linear infinite !important;
+        display: block !important;
+        transform: translateX(0%) !important;
+    } 
+}

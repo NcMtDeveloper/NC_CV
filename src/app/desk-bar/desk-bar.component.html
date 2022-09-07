@@ -1,0 +1,9 @@
+<div class="desk-main col-12 d-flex">
+    <div class="left">
+        <a class="desk-ilecy" [ngClass]="IsLight == true ? 'light lightColor' : 'dark darkColor'"
+            [routerLink]="mainAddress">ILECY</a>
+        <p class="desk-name">Amir Hosein Mardani Ch.</p>
+        <p class="desk-email">ILECY.developer@gmail.com</p>
+    </div>
+    <i class="desk-theme fa-solid " [ngClass]="IsLight == true ? 'fa-moon' : 'fa-sun'" (click)="addTheme()"></i>
+</div>

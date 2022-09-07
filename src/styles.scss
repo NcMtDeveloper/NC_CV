@@ -1,0 +1,63 @@
+@import 'src/style/variables.scss';
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+// @import "~animate.css/animate.min";
+
+
+html,
+body,
+app-root {
+  height: 100%;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+body {
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+}
+
+
+/*why? :| */
+.cv-red {
+  color: $primaryRedColor;
+  font-family: 'bold';
+}
+
+.cv-ilecy {
+  font-family: 'bold';
+}
+
+.cv-eng {
+  font-family: 'regular';
+}
+app-biography {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+app-footer {
+  width: -webkit-fill-available;
+  background-color: $primaryRedColor;
+}
+app-bottom {
+  position: fixed;
+  bottom: 0;
+}
+
+app-loading {
+  display: inline-flex;
+  width: -webkit-fill-available;
+  z-index: 99999999999999;
+  position: fixed;
+}

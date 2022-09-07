@@ -1,0 +1,9 @@
+<ng-container *ngIf="showOverlay === false">
+    <app-desk-bar *ngIf="allowDesk"></app-desk-bar>
+</ng-container>
+<app-mobile-bar *ngIf="allowMobile"></app-mobile-bar>
+<!-- <app-mobile-bar *ngIf="allowMobile"></app-mobile-bar> -->
+<app-loading *ngIf="showOverlay === true"></app-loading>
+<router-outlet></router-outlet>
+<i (click)="GoBack()" class="cv-back fa-solid fa-arrow-left"></i>
+<app-bottom></app-bottom>

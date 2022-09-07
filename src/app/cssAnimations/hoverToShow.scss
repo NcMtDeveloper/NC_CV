@@ -1,0 +1,20 @@
+.unhover {
+    display: none;
+    transform: translateX(-20%);
+}
+
+/* .hovered {
+    animation: hovered 1s;
+} */
+
+@keyframes hovered {
+    0% {
+        transform: translateX(-20%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
